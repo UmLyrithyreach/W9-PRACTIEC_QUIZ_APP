@@ -1,12 +1,15 @@
+import 'package:device_preview/device_preview.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'ui/quiz_app.dart';
- 
-void main() {
 
-  // 1 - Load the quiz data
+void main() => runApp(DevicePreview(builder: (context) => MainApp(), enabled: !kReleaseMode,));
 
-  
+class MainApp extends StatelessWidget {
+  const MainApp({super.key});
 
-  // 2 - Display the quiz
-  runApp(QuizApp());
+  @override
+  Widget build(BuildContext context) {
+    return const QuizApp();
+  }
 }
